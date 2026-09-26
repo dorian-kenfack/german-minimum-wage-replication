@@ -669,6 +669,13 @@ p_hours <- plot_eventstudy(
       )
     )
   
+  p_hours <- p_hours +
+    geom_vline(
+      xintercept = 2014.5,
+      linetype = "dashed",
+      linewidth = 0.55
+    )
+  
   # Abbildung speichern
   png(
     "figures/working_hours.png",
