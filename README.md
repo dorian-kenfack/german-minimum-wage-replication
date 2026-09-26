@@ -172,9 +172,15 @@ average annual hours worked in higher-exposure regions relative to
 lower-exposure regions after implementation, conditional on the model
 controls.
 
+The continuous event study complements the binary DiD estimate by
+showing how the association between regional minimum-wage exposure and
+average annual hours worked varies across years, relative to the
+reference year 2014. It also allows an assessment of differential
+developments before treatment.
+
 <div class="figure">
 
-<img src="figures/working_hours.png" alt="*Notes:* The figure reports coefficients from the continuous annual event-study specification. Coefficients represent differences in log average annual hours worked per employed person associated with a one-unit increase in the regional wage gap, relative to 2014. The reference-year coefficient is normalized to zero. Vertical bars show 95% confidence intervals based on standard errors clustered at the AMR level." width="100%" />
+<img src="figures/working_hours.png" alt="*Notes:* The figure reports coefficients from the continuous annual event-study specification. Coefficients represent differences in log average annual hours worked per employed person associated with a one-unit increase in the regional wage gap, relative to 2014. The reference-year coefficient is normalized to zero. Vertical bars show 95% confidence intervals based on standard errors clustered at the AMR level. The dashed vertical line separates the pre-treatment years (2013–2014) from the post-treatment years (2015–2016)." width="100%" />
 <p class="caption">
 
 *Notes:* The figure reports coefficients from the continuous annual
@@ -183,22 +189,21 @@ average annual hours worked per employed person associated with a
 one-unit increase in the regional wage gap, relative to 2014. The
 reference-year coefficient is normalized to zero. Vertical bars show 95%
 confidence intervals based on standard errors clustered at the AMR
-level.
+level. The dashed vertical line separates the pre-treatment years
+(2013–2014) from the post-treatment years (2015–2016).
 </p>
 
 </div>
 
-The estimates do not provide evidence of a reduction in average working
-hours in more strongly exposed regions. Instead, average annual hours
-developed more positively in higher-exposure regions after the
-introduction of the minimum wage.
-
-However, the event-study estimates also indicate statistically
-significant differential development before treatment. This raises
-concerns about the parallel-trends assumption and limits a causal
-interpretation of the post-treatment estimates. The additional results
-should therefore be interpreted as descriptive evidence of differential
-regional developments rather than as causal effects of the minimum wage.
+Taken together, the estimates do not support the hypothesis that more
+strongly exposed regions experienced a reduction in average annual hours
+worked. The binary DiD estimate is positive, and the post-treatment
+event-study coefficients also point to more positive developments
+relative to 2014. However, the statistically significant coefficient for
+2013 indicates a differential pre-treatment development, raising
+concerns about the parallel-trends assumption. These results should
+therefore be interpreted as descriptive regional associations rather
+than causal effects of the minimum wage.
 
 ## 6. Repository Structure
 
