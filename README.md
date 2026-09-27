@@ -14,6 +14,12 @@ analysis of average annual hours worked per employed person to examine
 whether stronger minimum-wage exposure is associated with changes along
 the intensive margin of employment.
 
+Building on this replication, a separate extension examines regional
+employment and unemployment developments around the 2017 German
+minimum-wage increase. The data, code, and results are available in the
+[extension
+repository](https://github.com/dorian-kenfack/german-minimum-wage-2017).
+
 ## 2. Original Study and Data
 
 Bonin et al. (2020) study the effects of the introduction of the German
