@@ -203,7 +203,11 @@ panelA.5 <- feols(
   data = trimmed_sample
 )
 
-t1.A <- etable(panelA.1, panelA.2, panelA.3, panelA.4, panelA.5, keep = "mw_luecke_g2 x post14")
+t1.A <- etable(
+  panelA.1, panelA.2, panelA.3, panelA.4, panelA.5,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+)
 print(t1.A)
 
 ## Panel B: Marginal employment (annual outcome)
@@ -253,7 +257,11 @@ panelB.5 <- feols(
   data = trimmed_sample
 )
 
-t1.B <- etable(panelB.1, panelB.2, panelB.3, panelB.4, panelB.5)
+t1.B <- etable(
+  panelB.1, panelB.2, panelB.3, panelB.4, panelB.5,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+)
 print(t1.B)
 
 ## Panel C: Exclusive marginal employment (annual outcome)
@@ -303,7 +311,11 @@ panelC.5 <- feols(
   data = trimmed_sample
 )
 
-t1.C <- etable(panelC.1, panelC.2, panelC.3, panelC.4, panelC.5)
+t1.C <- etable(
+  panelC.1, panelC.2, panelC.3, panelC.4, panelC.5,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+)
 print(t1.C)
 
 ## Panel D: Regular and exclusive marginal employment (annual outcome)
@@ -353,7 +365,11 @@ panelD.5 <- feols(
   data = trimmed_sample
 )
 
-t1.D <- etable(panelD.1, panelD.2, panelD.3, panelD.4, panelD.5)
+t1.D <- etable(
+  panelD.1, panelD.2, panelD.3, panelD.4, panelD.5,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+)
 print(t1.D)
 
 # Table 2: Unemployment (quarterly Outcome)
@@ -403,7 +419,11 @@ table2.5 <- feols(
   data = trimmed_sample
 )
 
-t2 <- etable(table2.1, table2.2, table2.3, table2.4, table2.5, keep = "mw_luecke_g2 x post14")
+t2 <- etable(
+  table2.1, table2.2, table2.3, table2.4, table2.5,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+)
 print(t2)
 
 ###############################################
@@ -428,7 +448,11 @@ c_event_regular <- feols(
   data = trimmed_sample
 )
 
-etable(c_event_regular)
+print(etable(
+  c_event_regular,
+  keep_raw = "^timeQ::.*:mw_luecke$",
+  digits = 4
+))
 
 c_event_marginal <- feols(
   log_geb_ausschl ~ i(year, mw_luecke, ref = 2014) +
@@ -443,7 +467,11 @@ c_event_marginal <- feols(
   data = trimmed_sample
 )
 
-etable(c_event_marginal)
+print(etable(
+  c_event_marginal,
+  keep_raw = "^year::.*:mw_luecke$",
+  digits = 4
+))
 
 c_event_total_employment <- feols(
   log_svgeb_total ~ i(year, mw_luecke, ref = 2014)
@@ -457,7 +485,11 @@ c_event_total_employment <- feols(
   data = trimmed_sample
 )
 
-etable(c_event_total_employment)
+print(etable(
+  c_event_total_employment,
+  keep_raw = "^year::.*:mw_luecke$",
+  digits = 4
+))
 
 c_event_unemployment <- feols(
   log_al_abs_insg_tot ~ i(timeQ, mw_luecke, ref = "Q2/2014")
@@ -471,7 +503,11 @@ c_event_unemployment <- feols(
   data = trimmed_sample
 )
 
-etable(c_event_unemployment)
+print(etable(
+  c_event_unemployment,
+  keep_raw = "^timeQ::.*:mw_luecke$",
+  digits = 4
+))
 
 
 ###############################################
@@ -480,7 +516,7 @@ etable(c_event_unemployment)
 
 # Regular employment
 
-p1 <- plot_eventstudy(
+p_regular <- plot_eventstudy(
   c_event_regular,
   "(a) Regular employment (in logs)",
   frequency = "quarter"
@@ -494,7 +530,7 @@ p1 <- plot_eventstudy(
 
 # Marginal Employment
 
-p2 <- plot_eventstudy(
+p_marginal <- plot_eventstudy(
   c_event_marginal,
   title = "(b) Marginal employment (in logs)",
   frequency = "year"
@@ -508,7 +544,7 @@ p2 <- plot_eventstudy(
 
 # Total employment
 
-p3 <- plot_eventstudy(
+p_total_employment <- plot_eventstudy(
   c_event_total_employment,
   "(c) Total employment (regular and marginal, in logs)",
   frequency = "year"
@@ -523,9 +559,9 @@ p3 <- plot_eventstudy(
 # Multi-panel: figure 4
 
 figure_4 <- wrap_plots(
-  p1,
-  p2,
-  p3,
+  p_regular,
+  p_marginal,
+  p_total_employment,
   ncol = 1
 )
 
@@ -546,7 +582,7 @@ png(
   res = 150
 )
 
-p4 <- plot_eventstudy(
+p_unemployment <- plot_eventstudy(
   c_event_unemployment,
   "Total unemployment (in logs)",
   frequency = "quarter"
@@ -558,7 +594,7 @@ p4 <- plot_eventstudy(
     ylim = c(-0.43, 0.43)
   )
 
-print(p4)
+print(p_unemployment)
 
 dev.off()
 
@@ -613,7 +649,11 @@ hours_did <- feols(
   data = hours_analysis
 )
 
-etable(hours_did)
+print(etable(
+  hours_did,
+  keep_raw = "^mw_luecke_g2:post14$",
+  digits = 4
+))
 
 ## Continuous event study: annual analogue of Bonin et al.'s preferred specification
 
@@ -630,7 +670,11 @@ hours_event <- feols(
   data = hours_analysis
 )
 
-etable(hours_event)
+print(etable(
+  hours_event,
+  keep_raw = "^year::.*:mw_luecke$",
+  digits = 4
+))
 
 ## Plotting of the continous event study
 
@@ -641,16 +685,13 @@ p_hours <- plot_eventstudy(
     reference = "2014"
   )
   
-  # Beide vertikalen Ereignislinien entfernen
   p_hours$layers <- Filter(
     function(layer) !inherits(layer$geom, "GeomVline"),
     p_hours$layers
   )
   
-  # Jahreswerte ohne unterjährigen Zeitversatz positionieren
   p_hours$data$x <- as.numeric(p_hours$data$period)
   
-  # Jahresachse und Beschriftungen anpassen
   p_hours <- p_hours +
     scale_x_continuous(
       breaks = 2013:2016,
@@ -676,7 +717,6 @@ p_hours <- plot_eventstudy(
       linewidth = 0.55
     )
   
-  # Abbildung speichern
   png(
     "figures/working_hours.png",
     width = 1800,
