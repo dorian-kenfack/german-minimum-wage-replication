@@ -51,9 +51,7 @@ District identifiers were matched to the BBSR 2017 mapping. Only district-level 
 
 The final CSV is supplied as the input for the working-hours analysis. This document describes its construction; an executable script rebuilding it from the source publications is not included in this repository.
 
-## 5. Precision and Validation
-
-### Published precision
+## 5. Published precision
 
 Calculations used the more precise values stored in the source spreadsheets. After aggregation to AMRs, employed persons and total hours worked were rounded to one decimal place in their respective units of thousands of persons and millions of hours.
 
