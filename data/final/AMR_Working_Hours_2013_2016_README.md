@@ -61,15 +61,6 @@ The hours-per-person measure was calculated before this rounding and is stored t
 
 The source publication's precision guidance (page 4) was applied when preparing the CSV: more precise source values were used for internal calculations, while published absolute totals were limited to one decimal place in the specified units. The source spreadsheets containing the more precise values are not part of this repository.
 
-### Documented validation checks
-
-The following checks were recorded during data preparation:
-
-- All 1,600 district-year values for employed persons matched Reihe 2, Band 1, Table 1.
-- Aggregated employed persons matched the corresponding national totals.
-- Differences between summed district hours and national totals were −0.006, −0.009, −0.006, and +0.011 million hours for 2013–2016, respectively. These small differences were considered consistent with rounding of district values; no artificial adjustment was made.
-- District-level hours-per-person ratios were compared with official Table 1.3, which reports whole hours. The largest absolute difference was 0.538 hours. This comparison is subject to the limited precision of the source totals.
-
 ## 6. Limitations
 
 The source statistics use district boundaries as of August 2025, while the AMR assignment uses the BBSR 2017 mapping. Minor municipal transfers across district boundaries were not reconstructed at the municipality level. The dataset should therefore not be treated as a fully verified reconstruction of historical AMR boundaries.
