@@ -62,8 +62,8 @@ replicated:
 1.  Baseline model with AMR and time fixed effects.
 2.  Additional East-West-specific seasonal or trend controls.
 3.  Additional East-West and AMR-type-specific time effects.
-4.  Additional trends based on pre-treatment regional characteristics.
-    (preferred specifiacation)
+4.  Additional trends based on pre-treatment regional characteristics
+    (preferred specification).
 5.  Specification 4 estimated on a trimmed sample that excludes regions
     with the most extreme wage gaps.
 
@@ -115,7 +115,7 @@ replicated, including the separate treatment and comparison group
 developments for regular employment, marginal employment, and
 unemployment.
 
-[View the replicated descriptive trends](figures/figure_3.png).
+[View replicated Figure 3: descriptive trends](figures/figure_3.png).
 
 Finally, the continuous event-study specifications underlying Figures 4
 and 5 of the original study were reproduced in R following the original
@@ -133,7 +133,8 @@ for annual outcomes. The dashed vertical line marks July 2014, and the
 solid vertical line marks January 2015. Panel (b) refers to exclusively
 marginal employment.
 
-[View the replicated unemployment event study](figures/figure_5.png).
+[View replicated Figure 5: unemployment event
+study](figures/figure_5.png).
 
 ## 5. Additional Analysis: Average Hours Worked
 
@@ -164,16 +165,17 @@ announcement in July 2014.
 The binary difference-in-differences estimate from the annual analogue
 of the preferred specification is reported below.
 
-| Model      | Estimate | Clustered SE | Observations | AMRs |
-|------------|---------:|-------------:|-------------:|-----:|
-| Binary DiD |   0.0033 |       0.0016 |        1,028 |  257 |
+| Model      | Estimate | Clustered SE | p-value | Observations | AMRs |
+|------------|---------:|-------------:|--------:|-------------:|-----:|
+| Binary DiD |   0.0033 |       0.0016 |  0.0372 |        1,028 |  257 |
 
 *Notes:* The dependent variable is the log of average annual hours
 worked per employed person. Standard errors are clustered at the AMR
 level. The model uses population weights and covers 257 AMRs from 2013
 to 2016.
 
-The binary DiD estimate corresponds to approximately 0.33% higher
+The binary DiD estimate is positive and statistically significant at the
+5% level (p = 0.0372), corresponding to approximately 0.33% higher
 average annual hours worked in higher-exposure regions relative to
 lower-exposure regions after implementation, conditional on the model
 controls.
